@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="is_it_prime_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <slider width="1" alignment="left" value="0.5" steps="100" id="o0V-dg-4Hl">
+                            <connections>
+                                <action selector="sliderMoved:" destination="AgC-eL-Hgc" id="oOK-5n-mbr"/>
+                            </connections>
+                        </slider>
+                        <label width="136" height="26" alignment="left" text="Is 50 Prime?" textAlignment="center" id="qb0-qc-9P7"/>
+                        <button width="1" alignment="left" title="Check!" id="Oh1-mX-Esm">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.96240230059999998" green="0.8042284797" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="findOut" destination="AgC-eL-Hgc" id="iUw-S2-lIa"/>
+                            </connections>
+                        </button>
+                        <label width="136" height="35" alignment="left" textAlignment="center" id="ygw-I2-iO3"/>
+                    </items>
+                    <connections>
+                        <outlet property="isPrimeLabel" destination="qb0-qc-9P7" id="98K-g5-yjJ"/>
+                        <outlet property="resultLabel" destination="ygw-I2-iO3" id="u7K-mN-pvI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="is_it_prime_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
